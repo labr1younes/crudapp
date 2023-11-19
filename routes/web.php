@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('home');
 });
 Route::post('/register', [UserController::class,'hello']);
+Route::post('/logout', [UserController::class,'logout']);
+Route::post('/login', [UserController::class,'login']);
