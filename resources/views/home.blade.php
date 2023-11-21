@@ -25,7 +25,20 @@
                 <button>Save Post</button>
             </form>
         </div>
-
+        
+        <div style="border: 3px solid " >
+            <b> My posts  </b>
+            @foreach ($posts as $item)
+            <div style="background-color: #659BDB">
+                <h3>{{$item['title']}}</h3>
+                <p>
+                    {{$item['body']}}
+                </p>
+            </div>
+                
+            @endforeach
+        </div>
+        
     @else 
 
     <div style="border: 3px solid " >
