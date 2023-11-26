@@ -28,12 +28,18 @@
         
         <div style="border: 3px solid " >
             <b> My posts  </b>
-            @foreach ($posts as $item)
+            @foreach ($posts as $post)
             <div style="background-color: #659BDB">
-                <h3>{{$item['title']}}</h3>
+                <h3>{{$post['title']}}</h3>
                 <p>
-                    {{$item['body']}}
+                    {{$post['body']}}
                 </p>
+                <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
+                <form action="/delete-post/{{$post->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <Button>Delete</Button>
+                </form>
             </div>
                 
             @endforeach
